@@ -1,0 +1,33 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+  	<servlet-name>Home</servlet-name>
+  	<servlet-class>com.softtek.controller.OurServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Home</servlet-name>
+  	<url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Home</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <listener>
+  	<listener-class>
+  		org.jboss.weld.environment.servlet.Listener
+  	</listener-class>
+  </listener>
+  <resource-env-ref>
+  	<resource-env-ref-name>BeanManager</resource-env-ref-name>
+  	<resource-env-ref-type>
+  		javax.enterprise.inject.spi.BeanManager
+  	</resource-env-ref-type>
+  </resource-env-ref>
+</web-app>
